@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200225 15:46:17.286" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
+<suite source="D:\Robot\DemoProject\NewSuite.robot" id="s1" name="NewSuite">
+<kw type="setup" name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Test suite started</arg>
+</arguments>
+<status status="PASS" endtime="20200225 15:46:18.133" starttime="20200225 15:46:18.131"></status>
+</kw>
+<test id="s1-t1" name="SuiteTest">
+<kw type="setup" name="GoToHomePage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200225 15:46:18.137" level="INFO">Opening browser 'chrome' to base url 'https://www.youtube.com/'.</msg>
+<status status="PASS" endtime="20200225 15:46:29.806" starttime="20200225 15:46:18.136"></status>
+</kw>
+<status status="PASS" endtime="20200225 15:46:29.807" starttime="20200225 15:46:18.135"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>I am SuiteTest</arg>
+</arguments>
+<status status="PASS" endtime="20200225 15:46:29.812" starttime="20200225 15:46:29.809"></status>
+</kw>
+<kw type="teardown" name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20200225 15:46:32.972" starttime="20200225 15:46:29.816"></status>
+</kw>
+<tags>
+<tag>Regression</tag>
+<tag>ST</tag>
+</tags>
+<status status="PASS" endtime="20200225 15:46:32.973" critical="yes" starttime="20200225 15:46:18.133"></status>
+</test>
+<kw type="teardown" name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>suite completed</arg>
+</arguments>
+<status status="PASS" endtime="20200225 15:46:32.985" starttime="20200225 15:46:32.982"></status>
+</kw>
+<status status="PASS" endtime="20200225 15:46:32.985" starttime="20200225 15:46:17.293"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Regression</stat>
+<stat fail="0" pass="1">ST</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="NewSuite" pass="1">NewSuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

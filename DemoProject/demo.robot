@@ -1,4 +1,6 @@
 *** Settings ***
+Suite Setup       Log To Console    Suite started
+Suite Teardown    Log To Console    Suite Completed
 Library           SeleniumLibrary
 
 *** Variables ***
@@ -15,20 +17,24 @@ TestCase1
 Test2
     [Tags]    Test2
     Open Browser    ${url}    chrome
-    Input Text    id = txtUsername    &{Login}[Username]
-    Input Password    id = txtPassword    &{Login}[password]
-    Click Button    id = btnLogin
+    Login
     Close Browser
     Log To Console    %{username} ran this test on %{os}
 
 Test3
-    [Tags]    Test3
-    Open Browser    ${url} chrome
+    [Tags]    Sanity
+    [Setup]    GoToHomePage
     Login
-    Close All Browsers
+    Set Tags    SmokeTest
+    Log To Console    Successfully
+    Remove Tags    SmokeTest
+    [Teardown]    Close All Browsers
 
 *** Keywords ***
-Login
-    Input Text    id = txtUsername    Admin
-    Input Password    id = txtPassword    admin123
+LoginKW
+    Input Text    id = txtUsername    &{Login}[Username]
+    Input Password    id = txtPassword    &{Login}[password]
     Click Button    id = btnLogin
+
+GoToHomePage
+    Open Browser    ${url}    chrome
